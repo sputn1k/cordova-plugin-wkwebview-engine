@@ -89,6 +89,15 @@ In order to allow swiping backwards and forwards in browser history like Safari 
 <preference name="AllowBackForwardNavigationGestures" value="true" />
 ```
 
+Disable webview bounce 
+-----------
+
+In order to disable the webview bouncing (by default its set to false), you can set the following preference in your `config.xml`:
+
+```xml
+<preference name="DisallowOverscroll" value="true" />
+```
+
 Limitations
 --------
 
