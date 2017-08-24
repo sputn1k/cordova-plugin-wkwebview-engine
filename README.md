@@ -17,11 +17,7 @@
 #         under the License.
 -->
 
-|iOS 9.3|iOS 10.0|Travis CI|
-|:-:|:-:|:-:|
-|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=ios-9.3,PLUGIN=cordova-plugin-wkwebview-engine)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=ios-9.3,PLUGIN=cordova-plugin-wkwebview-engine/)|[![Build Status](http://cordova-ci.cloudapp.net:8080/buildStatus/icon?job=cordova-periodic-build/PLATFORM=ios-10.0,PLUGIN=cordova-plugin-wkwebview-engine)](http://cordova-ci.cloudapp.net:8080/job/cordova-periodic-build/PLATFORM=ios-10.0,PLUGIN=cordova-plugin-wkwebview-engine/)|[![Build Status](https://travis-ci.org/apache/cordova-plugin-wkwebview-engine.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-wkwebview-engine)|
-
-Cordova WKWebView Engine
+Cordova WKWebView Engine - Background colour update
 ======
 
 This plugin makes `Cordova` use the `WKWebView` component instead of the default `UIWebView` component, and is installable only on a system with the iOS 9.0 SDK. 
@@ -50,6 +46,28 @@ To test the development version:
 You also must have at least Xcode 7 (iOS 9 SDK) installed. Check your Xcode version by running:
 
     xcode-select --print-path
+
+Customization - of Background colour 
+-----------
+
+Line 278: You can update the background colour, currectly it is set to Black. 
+
+`src/ios/CDVWKWebViewEngine.m`:
+
+```swift
+    //background color = black 
+    wkWebView.backgroundColor = UIColor(red:0.11, green:0.13, blue:0.19, alpha:1);
+    wkWebView.scrollView.backgroundColor = UIColor(red:0.11, green:0.13, blue:0.19, alpha:1);
+```
+
+Disable webview bounce 
+-----------
+
+In order to disable the webview bouncing (by default its set to false), you can set the following preference in your `config.xml`:
+
+```xml
+<preference name="DisallowOverscroll" value="true" />
+```
 
 Required Permissions
 -----------
@@ -87,28 +105,6 @@ In order to allow swiping backwards and forwards in browser history like Safari 
 
 ```xml
 <preference name="AllowBackForwardNavigationGestures" value="true" />
-```
-
-Disable webview bounce 
------------
-
-In order to disable the webview bouncing (by default its set to false), you can set the following preference in your `config.xml`:
-
-```xml
-<preference name="DisallowOverscroll" value="true" />
-```
-
-Customization - of Background colour 
------------
-
-Line 278: You can update the background colour, currectly it is set to Black. 
-
-`src/ios/CDVWKWebViewEngine.m`:
-
-```swift
-    //background color = black 
-    wkWebView.backgroundColor = UIColor(red:0.11, green:0.13, blue:0.19, alpha:1);
-    wkWebView.scrollView.backgroundColor = UIColor(red:0.11, green:0.13, blue:0.19, alpha:1);
 ```
 
 Limitations
