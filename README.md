@@ -98,6 +98,19 @@ In order to disable the webview bouncing (by default its set to false), you can 
 <preference name="DisallowOverscroll" value="true" />
 ```
 
+* Customization - of Background colour 
+-----------
+
+Line 278: You can update the background colour, currectly it is set to Black. 
+
+`src/ios/CDVWKWebViewEngine.m`:
+
+```swift
+    //background color = black 
+    wkWebView.backgroundColor = UIColor(red:0.11, green:0.13, blue:0.19, alpha:1);
+    wkWebView.scrollView.backgroundColor = UIColor(red:0.11, green:0.13, blue:0.19, alpha:1);
+```
+
 Limitations
 --------
 
