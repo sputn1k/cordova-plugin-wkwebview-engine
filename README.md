@@ -98,7 +98,7 @@ In order to disable the webview bouncing (by default its set to false), you can 
 <preference name="DisallowOverscroll" value="true" />
 ```
 
-* Customization - of Background colour 
+Customization - of Background colour 
 -----------
 
 Line 278: You can update the background colour, currectly it is set to Black. 
